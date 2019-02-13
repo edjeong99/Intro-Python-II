@@ -15,6 +15,7 @@ def p_move(p, direction):
     else:
         print("You can not move to that direction")
 
+
     # Make a new player object that is currently in the 'outside' room.
 p = Player("tom", room['outside'])
 # Write a loop that:
@@ -33,10 +34,15 @@ while True:
             p_move(p, pinput)
 
     else:
-        if input_list[0] == 'get':
+        if input_list[0] == 'get' or input_list[0] == 'take':
+            item_gotten = False
             for item_object in p.current_room.items:
                 if input_list[1] == item_object.name:
                     p.get_item(item_object)
+                    item_gotten = True
+
+            if item_gotten == False:
+                print("there is no such item \n")
 
         if input_list[0] == 'drop':
             for item_object in p.items:

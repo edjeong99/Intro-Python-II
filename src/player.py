@@ -9,9 +9,11 @@ class Player:
         self.items = []
 
     def get_item(self, item):
+        item.on_take()
         self.items.append(item)
         self.current_room.items.remove(item)
 
     def drop_item(self, item):
+        item.on_drop()
         self.current_room.items.append(item)
         self.items.remove(item)
