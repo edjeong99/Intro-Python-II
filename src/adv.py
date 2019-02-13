@@ -36,8 +36,10 @@ room['treasure'].s_to = room['narrow']
 
 def p_move(p, direction):
     direction = direction + "_to"
-    p.current_room = getattr(p.current_room, direction)
-
+    if hasattr(p.current_room, direction):
+        p.current_room = getattr(p.current_room, direction)
+    else:
+        print("You can not move to that direction")
 
     # Make a new player object that is currently in the 'outside' room.
 p = Player("tom", room['outside'])
@@ -48,7 +50,9 @@ while True:
     print(p.current_room.description)
 
     pinput = input("What do you want to do next? ")
-    p_move(p, pinput)
+
+    if pinput == 'n' or pinput == 's' or pinput == 'e' or pinput == 'w':
+        p_move(p, pinput)
 
  # * Prints the current room name
  # * Prints the current description (the textwrap module might be useful here).
