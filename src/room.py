@@ -13,3 +13,6 @@ class Room:
 
         for i in range(len(self.items)):
             print(f"item #{i+1} : {self.items[i].name}")
+
+    def remove_item(self, item):
+        self.items.remove(item)

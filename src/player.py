@@ -8,6 +8,11 @@ class Player:
         self.current_room = room
         self.items = []
 
-    def add_item(self, item):
-        self.player_items.append(item)
+    def get_item(self, item):
+        print(f'in Player get_item item = {item}')
+        print(f'in Player get_item current_room = {self.current_room.name}')
+        print(
+            f'in Player get_itemself.current_room.items = {self.current_room.items[0].name}')
+
+        self.items.append(item)
         self.current_room.items.remove(item)

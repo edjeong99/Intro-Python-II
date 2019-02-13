@@ -26,14 +26,26 @@ while True:
     p.current_room.display_items()
     pinput = input("What do you want to do next? ")
 
-    if pinput == 'n' or pinput == 's' or pinput == 'e' or pinput == 'w':
-        p_move(p, pinput)
+    input_list = pinput.split(' ', 1)
+    print(input_list)
 
- # * Prints the current room name
- # * Prints the current description (the textwrap module might be useful here).
- # * Waits for user input and decides what to do.
- #
- # If the user enters a cardinal direction, attempt to move to the room there.
- # Print an error message if the movement isn't allowed.
- #
- # If the user enters "q", quit the game.
+    if len(input_list) == 1:
+        if pinput == 'n' or pinput == 's' or pinput == 'e' or pinput == 'w':
+            p_move(p, pinput)
+
+    else:
+        if input_list[0] == 'get':
+            for item_object in p.current_room.items:
+                if input_list[1] == item_object.name:
+                    p.get_item(item_object)
+
+          #  elif pinput:
+
+         # * Prints the current room name
+         # * Prints the current description (the textwrap module might be useful here).
+         # * Waits for user input and decides what to do.
+         #
+         # If the user enters a cardinal direction, attempt to move to the room there.
+         # Print an error message if the movement isn't allowed.
+         #
+         # If the user enters "q", quit the game.
