@@ -15,7 +15,6 @@ def p_move(p, direction):
     else:
         print("You can not move to that direction")
 
-
     # Make a new player object that is currently in the 'outside' room.
 p = Player("tom", room['outside'])
 # Write a loop that:
@@ -38,6 +37,11 @@ while True:
             for item_object in p.current_room.items:
                 if input_list[1] == item_object.name:
                     p.get_item(item_object)
+
+        if input_list[0] == 'drop':
+            for item_object in p.items:
+                if input_list[1] == item_object.name:
+                    p.drop_item(item_object)
 
           #  elif pinput:
 

@@ -9,10 +9,9 @@ class Player:
         self.items = []
 
     def get_item(self, item):
-        print(f'in Player get_item item = {item}')
-        print(f'in Player get_item current_room = {self.current_room.name}')
-        print(
-            f'in Player get_itemself.current_room.items = {self.current_room.items[0].name}')
-
         self.items.append(item)
         self.current_room.items.remove(item)
+
+    def drop_item(self, item):
+        self.current_room.items.append(item)
+        self.items.remove(item)
