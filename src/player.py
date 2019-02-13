@@ -17,3 +17,9 @@ class Player:
         item.on_drop()
         self.current_room.items.append(item)
         self.items.remove(item)
+
+    def display_inventory(self):
+        print(f"{self.name} has {len(self.items)} items : ")
+
+        for i in range(len(self.items)):
+            print(f"  item #{i+1} : {self.items[i].name}")

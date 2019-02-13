@@ -33,6 +33,9 @@ while True:
         if pinput == 'n' or pinput == 's' or pinput == 'e' or pinput == 'w':
             p_move(p, pinput)
 
+        elif pinput == 'i':
+            p.display_inventory()
+
     else:
         if input_list[0] == 'get' or input_list[0] == 'take':
             item_gotten = False
