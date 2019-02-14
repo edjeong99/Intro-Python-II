@@ -1,11 +1,13 @@
 from room import Room
 from player import Player
 from item import Item
+
 from data import room, item
 
 #
 # Main
 #
+
 
 
 def p_move(p, direction):
@@ -47,6 +49,7 @@ while True:
             if item_gotten == False:
                 print("there is no such item \n")
 
+
         if input_list[0] == 'drop':
             for item_object in p.items:
                 if input_list[1] == item_object.name:
@@ -62,3 +65,4 @@ while True:
          # Print an error message if the movement isn't allowed.
          #
          # If the user enters "q", quit the game.
+
