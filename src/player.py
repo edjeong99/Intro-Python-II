@@ -2,6 +2,7 @@
 # currently.
 
 
+
 class Player:
     def __init__(self, name, room):
         self.name = name
@@ -23,3 +24,4 @@ class Player:
 
         for i in range(len(self.items)):
             print(f"  item #{i+1} : {self.items[i].name}")
+

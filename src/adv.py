@@ -1,6 +1,7 @@
 from room import Room
 from player import Player
 from item import Item
+
 from data import room, item
 from functions import p_move, one_word_input, two_word_input
 
@@ -8,13 +9,6 @@ from functions import p_move, one_word_input, two_word_input
 # Main
 #
 
-
-'''def p_move(p, direction):
-    direction = direction + "_to"
-    if hasattr(p.current_room, direction):
-        p.current_room = getattr(p.current_room, direction)
-    else:
-        print("You can not move to that direction")'''
 
 # Make a new player object that is currently in the 'outside' room.
 p = Player("tom", room['outside'])

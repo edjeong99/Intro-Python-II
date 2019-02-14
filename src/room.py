@@ -2,6 +2,7 @@
 # description attributes.
 
 
+
 class Room:
     def __init__(self, name, description, items):
         self.name = name
@@ -16,3 +17,4 @@ class Room:
 
     def remove_item(self, item):
         self.items.remove(item)
+
