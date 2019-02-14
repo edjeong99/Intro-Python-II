@@ -49,5 +49,6 @@ def display_room(p):
     if p.current_room.lighted or p.has_light:
         print(p.current_room.description)
         p.current_room.display_items()
+        p.current_room.display_npcs()
     else:
         print("Room is too dark to see anything")

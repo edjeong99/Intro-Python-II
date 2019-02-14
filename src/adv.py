@@ -11,7 +11,7 @@ from functions import p_move, one_word_input, two_word_input, display_room
 
 
 # Make a new player object that is currently in the 'outside' room.
-p = Player("tom", room['outside'])
+p = Player("tom", room['outside'], [])
 # Write a loop that:
 
 while True:

@@ -3,10 +3,10 @@
 
 
 class Player:
-    def __init__(self, name, room):
+    def __init__(self, name, room, items):
         self.name = name
         self.current_room = room
-        self.items = []
+        self.items = items
         self.has_light = False
 
     def get_item(self, item):
