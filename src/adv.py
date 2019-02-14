@@ -3,7 +3,7 @@ from player import Player
 from item import Item
 
 from data import room, item
-from functions import p_move, one_word_input, two_word_input
+from functions import p_move, one_word_input, two_word_input, display_room
 
 #
 # Main
@@ -15,17 +15,16 @@ p = Player("tom", room['outside'])
 # Write a loop that:
 
 while True:
-    print(f"\n\nYou are in the {p.current_room.name}\n")
-    print(p.current_room.description)
-    p.current_room.display_items()
+
+    display_room(p)
     pinput = input("What do you want to do next? ")
 
     input_list = pinput.split(' ', 1)
-    print(input_list)
-
+   # print(f'input_list = {input_list}')
     if len(input_list) == 1:
         one_word_input(p, pinput)
     else:
+        print("before two word input")
         two_word_input(p, input_list)
 
         #  elif pinput:

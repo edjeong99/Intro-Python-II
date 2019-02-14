@@ -2,12 +2,12 @@
 # description attributes.
 
 
-
 class Room:
-    def __init__(self, name, description, items):
+    def __init__(self, name, description, items, lighted):
         self.name = name
         self.description = description
         self.items = items
+        self.lighted = lighted
 
     def display_items(self):
         print(f"{self.name} has {len(self.items)} items : ")
@@ -17,4 +17,3 @@ class Room:
 
     def remove_item(self, item):
         self.items.remove(item)
-
